@@ -4,17 +4,23 @@ import oxanium from "../fonts/oxanium.ttf";
 let primary = createTheme({
     palette: {
         background: {
-            default: "#171717",
+            default: "#F7DBA7",
+            // default: "#291F1E",
         },
         text: {
-            primary: "#f95b2b",
-            secondary: "#ff9f82",
+            primary: "#19180A",
+            // primary: "#82D173",
+            secondary: "#3d3a19",
+            // secondary: "#ABFAA9",
         },
         primary: {
-            main: "#171717",
+            main: "#F64740",
         },
         secondary: {
-            main: "#F3CA40",
+            main: "#3A86FF",
+        },
+        custom: {
+            light: "white",
         },
     },
     typography: {

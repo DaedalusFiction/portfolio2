@@ -1,8 +1,36 @@
+:root {
+    --color: #fffdf0;
+}
+
+a {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+p {
+    max-width: 75ch;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.section {
+    padding: 10vw 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .logo {
     width: 4rem;
     height: auto;
 }
 
-:root {
-    --color: #ff9f82;
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
