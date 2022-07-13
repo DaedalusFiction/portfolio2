@@ -57,7 +57,7 @@ primary = createTheme(primary, {
         },
         h5: {
             color: primary.palette.text.secondary,
-            fontSize: "clamp(1rem, 1.5vw, 5rem)",
+            // fontSize: "clamp(1rem, 2vw, 5rem)",
         },
     },
     components: {

@@ -15,21 +15,21 @@ const About = () => {
                 display: "flex",
             }}
         >
-            <Grid container spacing={5}>
+            <Grid container spacing={6}>
                 <Grid
                     item
                     xs={12}
                     md={6}
                     sx={{ display: "flex", alignItems: "center" }}
                 >
-                    <Box sx={{ margin: "0 5vw" }}>
-                        <Typography variant="h3">Self-Taught</Typography>
+                    <Box sx={{ padding: "0 5vw" }}>
+                        <Typography variant="h3">My Journey</Typography>
                         <Typography component="p" sx={{ marginBottom: "1em" }}>
-                            I've spent the past year teaching myself everything
-                            from basic HTML and CSS to React, Redux, and MUI. By
-                            learning on my own I've developed an eye for quality
-                            sources of information as well as the confidence to
-                            tackle new projects and technologies.
+                            I've spent the past few years teaching myself the
+                            principles of modern programming. By learning on my
+                            own I've developed an eye for quality sources of
+                            information as well as the confidence to engage new
+                            projects and ideas.
                         </Typography>
                         <Link to="/projects">
                             <Button
@@ -41,8 +41,17 @@ const About = () => {
                         </Link>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <img src={mountain1} alt="snowy mountains" />
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+                    sx={{ display: { xs: "none", md: "flex" } }}
+                >
+                    <img
+                        style={{ borderRadius: "20px 0 0 20px" }}
+                        src={mountain1}
+                        alt="snowy mountains"
+                    />
                 </Grid>
             </Grid>
         </Box>
