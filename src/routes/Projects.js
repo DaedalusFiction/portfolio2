@@ -51,7 +51,7 @@ const Projects = () => {
                                     }}
                                     sx={{
                                         borderRadius: "10px",
-                                        marginBottom: "1em",
+                                        // marginBottom: ".5em",
                                         padding: "1em 1em",
                                         "&:hover": {
                                             backgroundColor: "white",
