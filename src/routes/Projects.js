@@ -1,5 +1,5 @@
 import { CleaningServices } from "@mui/icons-material";
-import { Chip, Grid, Typography } from "@mui/material";
+import { Chip, Fade, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React, { useState } from "react";
 import Project from "../components/Project";
@@ -16,14 +16,14 @@ const projects = [
         technologies: ["React", "Redux", "MUI", "Firebase"],
     },
     {
-        name: "The Forums",
+        name: "SICKTOOTH",
         website: "https://customforum.netlify.app",
         image: mountain2,
         description: "Customizeable message board made with Redux and Firebase",
         technologies: ["React", "Redux", "MUI", "Firebase"],
     },
     {
-        name: "The Forums",
+        name: "KDA PFDD",
         website: "https://customforum.netlify.app",
         image: mountain1,
         description: "Customizeable message board made with Redux and Firebase",
@@ -32,10 +32,21 @@ const projects = [
 ];
 
 const Projects = () => {
-    const [currentProject, setcurrentProject] = useState(projects[0]);
+    const [currentProject, setCurrentProject] = useState(projects[0]);
+    const [photoActive, setPhotoActive] = useState(true);
+
+    const handleClick = (project) => {
+        setTimeout(() => {
+            setCurrentProject(project);
+            setPhotoActive(true);
+        }, 300);
+    };
 
     return (
-        <Box className="section">
+        <Box
+            className="section"
+            sx={{ backgroundColor: primary.palette.custom.light }}
+        >
             <Container>
                 <Typography variant="h1" sx={{ marginBottom: ".5em" }}>
                     My Projects
@@ -47,14 +58,23 @@ const Projects = () => {
                                 <Box
                                     key={index}
                                     onClick={() => {
-                                        setcurrentProject(project);
+                                        setPhotoActive(false);
+                                        handleClick(project);
                                     }}
                                     sx={{
-                                        borderRadius: "10px",
+                                        borderRadius: primary.borderRadius,
                                         // marginBottom: ".5em",
-                                        padding: "1em 1em",
+                                        padding: ".75em .75em",
+                                        margin: ".25em 0",
+                                        backgroundColor:
+                                            project.name === currentProject.name
+                                                ? primary.palette.custom
+                                                      .lightMuted
+                                                : "inherit",
                                         "&:hover": {
-                                            backgroundColor: "white",
+                                            backgroundColor:
+                                                primary.palette.custom
+                                                    .lightMuted,
                                         },
                                         cursor: "pointer",
                                     }}
@@ -81,14 +101,17 @@ const Projects = () => {
                     </Grid>
                     <Grid item xs={12} sm={8}>
                         {currentProject.image && (
-                            <img
-                                src={currentProject.image}
-                                alt="screenshot of website"
-                                style={{
-                                    borderRadius: primary.borderRadius,
-                                    boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
-                                }}
-                            />
+                            <Fade in={photoActive}>
+                                <img
+                                    src={currentProject.image}
+                                    alt="screenshot of website"
+                                    style={{
+                                        borderRadius: primary.borderRadius,
+                                        boxShadow:
+                                            "2px 2px 5px rgba(0, 0, 0, 0.5)",
+                                    }}
+                                />
+                            </Fade>
                         )}
                     </Grid>
                 </Grid>
