@@ -38,55 +38,54 @@ const EmailForm = () => {
     return (
         <Box className="section" id="contact">
             <Container>
-                <Box
-                    className="flex-center"
-                    sx={{
-                        flexDirection: "column",
-                        gap: "1rem",
-                        padding: "0 .5em",
-                    }}
-                >
-                    <Typography variant="h3">Get in Touch!</Typography>
+                <Box className="flex-center">
                     <Box
-                        component="form"
                         sx={{
-                            "& > :not(style)": { m: 1, width: "35ch" },
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "1rem",
+                            maxWidth: "20rem",
                         }}
-                        noValidate
-                        autoComplete="off"
                     >
+                        <Typography variant="h3" className="text-center">
+                            Get in Touch!
+                        </Typography>
+                        <Box component="form" noValidate autoComplete="off">
+                            {!emailSent && (
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Email Address"
+                                    variant="outlined"
+                                    color="primary"
+                                    sx={{
+                                        width: "20rem",
+                                        input: {
+                                            color: primary.palette.custom.dark,
+                                        },
+                                    }}
+                                    value={email}
+                                    onChange={handleEmailChange}
+                                    focused
+                                    error={emailError}
+                                />
+                            )}
+                        </Box>
                         {!emailSent && (
-                            <TextField
-                                id="outlined-basic"
-                                label="Email Address"
-                                variant="outlined"
-                                color="primary"
-                                sx={{
-                                    input: {
-                                        color: primary.palette.custom.dark,
-                                    },
-                                }}
-                                value={email}
-                                onChange={handleEmailChange}
-                                focused
-                                error={emailError}
-                            />
+                            <Button
+                                variant="contained"
+                                onClick={sendEmail}
+                                fullWidth
+                                endIcon={<ArrowRightAltIcon />}
+                            >
+                                Send
+                            </Button>
+                        )}
+                        {emailSent && (
+                            <Typography variant="p">
+                                Thanks! I'll be in touch soon!
+                            </Typography>
                         )}
                     </Box>
-                    {!emailSent && (
-                        <Button
-                            variant="contained"
-                            onClick={sendEmail}
-                            endIcon={<ArrowRightAltIcon />}
-                        >
-                            Send
-                        </Button>
-                    )}
-                    {emailSent && (
-                        <Typography variant="p">
-                            Thanks! I'll be in touch soon!
-                        </Typography>
-                    )}
                 </Box>
             </Container>
         </Box>

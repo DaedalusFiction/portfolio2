@@ -16,11 +16,9 @@ import { useState } from "react";
 const pages = ["projects", "contact"];
 const activeStyle = {
     color: primary.palette.custom.light,
-    margin: "0 1em",
 };
 const inactiveStyle = {
     color: primary.palette.custom.lightMuted,
-    margin: "0 1em",
 };
 
 const Header = () => {
@@ -46,15 +44,20 @@ const Header = () => {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Box
-                            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-                        >
-                            <img
-                                src={logo}
-                                className="logo"
-                                alt="nautilus shell"
-                            />
-                        </Box>
+                        <Link to="/">
+                            <Box
+                                sx={{
+                                    display: { xs: "none", md: "flex" },
+                                    mr: 1,
+                                }}
+                            >
+                                <img
+                                    src={logo}
+                                    className="logo"
+                                    alt="nautilus shell"
+                                />
+                            </Box>
+                        </Link>
                         <Box
                             sx={{
                                 flexGrow: 1,
@@ -138,6 +141,7 @@ const Header = () => {
                                         //separate styling because can't get NavLink working with hover
                                         sx={{
                                             textTransform: "uppercase",
+                                            margin: "0 1em",
                                             "&:hover": {
                                                 color: primary.palette.custom
                                                     .light,
