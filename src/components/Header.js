@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,13 +6,12 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo.png";
 import { Slide, useScrollTrigger } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 import { primary } from "../themes/primary";
-import { CleaningServices } from "@mui/icons-material";
+import { useState } from "react";
 
 const pages = ["projects", "contact"];
 const activeStyle = {
@@ -25,8 +23,8 @@ const inactiveStyle = {
     margin: "0 1em",
 };
 
-const Header = (props) => {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+const Header = () => {
+    const [anchorElNav, setAnchorElNav] = useState(null);
     const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
 
     const handleOpenNavMenu = (event) => {
@@ -139,6 +137,7 @@ const Header = (props) => {
                                     <Typography
                                         //separate styling because can't get NavLink working with hover
                                         sx={{
+                                            textTransform: "uppercase",
                                             "&:hover": {
                                                 color: primary.palette.custom
                                                     .light,
