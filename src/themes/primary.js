@@ -2,6 +2,7 @@ import { createTheme } from "@mui/material";
 import oxanium from "../fonts/oxanium.ttf";
 
 let primary = createTheme({
+    borderRadius: "15px",
     palette: {
         background: {
             default: "#F7DBA7",

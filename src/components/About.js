@@ -48,7 +48,9 @@ const About = () => {
                     sx={{ display: { xs: "none", md: "flex" } }}
                 >
                     <img
-                        style={{ borderRadius: "20px 0 0 20px" }}
+                        style={{
+                            borderRadius: `${primary.borderRadius} 0 0 ${primary.borderRadius}`,
+                        }}
                         src={mountain1}
                         alt="snowy mountains"
                     />
