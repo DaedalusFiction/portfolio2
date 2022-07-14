@@ -22,7 +22,7 @@ const technologies = [
 
 const Technologies = () => {
     return (
-        <Box sx={{ padding: { xs: "10vw 0", md: "0" } }}>
+        <Box sx={{ padding: { xs: "8rem 0", md: "0" } }}>
             <Grid container spacing={6}>
                 <Grid
                     item
@@ -49,6 +49,7 @@ const Technologies = () => {
                             {technologies.map((technology) => {
                                 return (
                                     <Chip
+                                        key={technology}
                                         color="secondary"
                                         label={technology}
                                         sx={{ margin: " 0 .5em .5em 0" }}

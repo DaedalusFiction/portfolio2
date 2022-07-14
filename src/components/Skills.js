@@ -51,7 +51,7 @@ const Skills = () => {
                 <Grid container spacing={10}>
                     {skills.map((skill) => {
                         return (
-                            <Grid item xs={12} sm={3}>
+                            <Grid key={skill.skill} item xs={12} sm={6} md={3}>
                                 <Box className="flex-center">
                                     <Box
                                         sx={{

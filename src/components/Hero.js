@@ -3,6 +3,7 @@ import { Box, Container } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
 import mountain2 from "../images/mountain2.jpg";
+import { primary } from "../themes/primary";
 
 const Hero = () => {
     return (
@@ -31,7 +32,7 @@ const Hero = () => {
                     <Typography
                         className="text-center"
                         variant="h5"
-                        sx={{ color: "white" }}
+                        sx={{ color: primary.palette.custom.lightMuted }}
                     >
                         Full-stack Web Developer based in Central Virginia
                     </Typography>

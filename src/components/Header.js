@@ -11,10 +11,21 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo.png";
 import { Slide, useScrollTrigger } from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
+import { primary } from "../themes/primary";
+import { CleaningServices } from "@mui/icons-material";
 
 const pages = ["projects", "contact"];
+const activeStyle = {
+    color: primary.palette.custom.light,
+    margin: "0 1em",
+};
+const inactiveStyle = {
+    color: primary.palette.custom.lightMuted,
+    margin: "0 1em",
+};
 
-const ResponsiveAppBar = (props) => {
+const Header = (props) => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
 
@@ -22,7 +33,9 @@ const ResponsiveAppBar = (props) => {
         setAnchorElNav(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (e) => {
+        console.log(e.target.innerHTML);
+
         setAnchorElNav(null);
     };
 
@@ -78,15 +91,17 @@ const ResponsiveAppBar = (props) => {
                                     display: { xs: "block", md: "none" },
                                 }}
                             >
-                                {pages.map((page) => (
-                                    <MenuItem
-                                        key={page}
-                                        onClick={handleCloseNavMenu}
-                                    >
-                                        <Typography textAlign="center">
-                                            {page}
-                                        </Typography>
-                                    </MenuItem>
+                                {pages.map((page, index) => (
+                                    <Link key={index} to={`/${page}`}>
+                                        <MenuItem
+                                            key={page}
+                                            onClick={handleCloseNavMenu}
+                                        >
+                                            <Typography textAlign="center">
+                                                {page}
+                                            </Typography>
+                                        </MenuItem>
+                                    </Link>
                                 ))}
                             </Menu>
                         </Box>
@@ -114,17 +129,25 @@ const ResponsiveAppBar = (props) => {
                             }}
                         >
                             {pages.map((page) => (
-                                <Button
+                                <NavLink
+                                    to={`/${page}`}
                                     key={page}
-                                    onClick={handleCloseNavMenu}
-                                    sx={{
-                                        my: 2,
-                                        color: "white",
-                                        display: "block",
-                                    }}
+                                    style={({ isActive }) =>
+                                        isActive ? activeStyle : inactiveStyle
+                                    }
                                 >
-                                    {page}
-                                </Button>
+                                    <Typography
+                                        //separate styling because can't get NavLink working with hover
+                                        sx={{
+                                            "&:hover": {
+                                                color: primary.palette.custom
+                                                    .light,
+                                            },
+                                        }}
+                                    >
+                                        {page}
+                                    </Typography>
+                                </NavLink>
                             ))}
                         </Box>
                     </Toolbar>
@@ -133,4 +156,4 @@ const ResponsiveAppBar = (props) => {
         </Slide>
     );
 };
-export default ResponsiveAppBar;
+export default Header;

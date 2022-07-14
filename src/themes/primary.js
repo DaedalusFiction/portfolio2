@@ -21,6 +21,9 @@ let primary = createTheme({
         },
         custom: {
             light: "white",
+            // lightMuted: "#e2e2e2",
+            lightMuted: "#d0d0d0",
+            dark: "#2d2d2d",
         },
     },
     typography: {
@@ -47,7 +50,7 @@ primary = createTheme(primary, {
     typography: {
         h1: {
             fontFamily: primary.typography.primary.accent,
-            fontSize: "clamp(2rem, 5vw, 5rem)",
+            fontSize: "clamp(3rem, 5vw, 5rem)",
         },
         h2: {
             fontFamily: primary.typography.primary.accent,

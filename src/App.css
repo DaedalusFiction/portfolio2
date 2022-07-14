@@ -1,10 +1,15 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 :root {
-    --color: #fffdf0;
+    --color: #d0d0d0;
 }
 
 a {
-    box-sizing: border-box;
     text-decoration: none;
+    color: black;
 }
 
 p {
@@ -17,7 +22,10 @@ img {
 }
 
 .section {
-    padding: 10vw 0;
+    padding: 8rem 0;
+}
+.section-small {
+    padding: 4rem 0;
 }
 
 .text-center {
