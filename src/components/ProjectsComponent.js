@@ -1,38 +1,42 @@
 import { Chip, Fade, Grid, Slide, Typography } from "@mui/material";
+import { convertLength } from "@mui/material/styles/cssUtils";
 import { Box, Container } from "@mui/system";
 import React, { useState } from "react";
-import mountain1 from "../images/mountain1.jpg";
-import mountain2 from "../images/mountain2.jpg";
+import forumScreencap from "../images/forumScreencap.jpg";
+import pfddScreencap from "../images/pfddScreencap.jpg";
+import sicktoothScreencap from "../images/sicktoothScreencap.jpg";
+import streamerizeScreencap from "../images/streamerizeScreencap.jpg";
 import { primary } from "../themes/primary";
 
 const projects = [
     {
         name: "The Forums",
         url: "https://customforum.netlify.app",
-        image: mountain1,
-        description: "Customizeable message board made with Redux and Firebase",
+        image: forumScreencap,
+        description: "Customizeable Message Board Template",
         technologies: ["React", "Redux", "MUI", "Firebase"],
     },
     {
         name: "SICKTOOTH",
-        url: "https://customforum.netlify.app",
-        image: mountain2,
-        description: "Customizeable message board made with Redux and Firebase",
-        technologies: ["React", "Redux", "MUI", "Firebase"],
+        url: "https://www.sicktooth.com",
+        image: sicktoothScreencap,
+        description: "Literary Journal",
+        technologies: ["React", "MUI", "Firebase", "Markdown"],
     },
     {
         name: "KDA PFDD",
-        url: "https://customforum.netlify.app",
-        image: mountain1,
-        description: "Customizeable message board made with Redux and Firebase",
-        technologies: ["React", "Redux", "MUI", "Firebase"],
+        url: "https://www.kdapfdd.net",
+        image: pfddScreencap,
+        description: "Event page for Patient-Focused Drug Development",
+        technologies: ["React", "MUI", "Email.js"],
     },
     {
-        name: "Freelancing",
-        url: "https://customforum.netlify.app",
-        image: mountain1,
-        description: "Customizeable message board made with Redux and Firebase",
-        technologies: ["React", "Redux", "MUI", "Firebase"],
+        name: "Streamerize",
+        url: "https://www.streamerize.com",
+        image: streamerizeScreencap,
+        description:
+            "Displays random twitch.tv streams with fewer than ten viewers",
+        technologies: ["HTML", "CSS", "API"],
     },
 ];
 
@@ -48,129 +52,123 @@ const Projects = () => {
         setTimeout(() => {
             setCurrentProject(project);
         }, 300);
-        setTimeout(() => {
-            setPhotoActive(true);
-        }, 600);
     };
 
     return (
-        <Box
-            className="section"
-            sx={{ backgroundColor: primary.palette.custom.light }}
-        >
-            <Container>
-                <Typography variant="h1" sx={{ marginBottom: ".5em" }}>
-                    My Projects
-                </Typography>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={4}>
-                        {projects.map((project, index) => {
-                            return (
-                                <Box
-                                    key={index}
-                                    onClick={() => {
-                                        handleClick(project);
-                                    }}
-                                    sx={{
-                                        borderRadius: primary.borderRadius,
-                                        // marginBottom: ".5em",
-                                        padding: ".5em .75em",
-                                        margin: ".25em 0",
+        <Box className="section">
+            <Typography variant="h1" sx={{ marginBottom: ".5em" }}>
+                My Projects
+            </Typography>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={4}>
+                    {projects.map((project, index) => {
+                        return (
+                            <Box
+                                key={index}
+                                onClick={() => {
+                                    handleClick(project);
+                                }}
+                                sx={{
+                                    borderRadius: primary.borderRadius,
+                                    // marginBottom: ".5em",
+                                    padding: ".5em .75em",
+                                    margin: ".25em 0",
+                                    backgroundColor:
+                                        project.name === currentProject.name
+                                            ? primary.palette.custom.lightMuted
+                                            : "inherit",
+                                    "&:hover": {
                                         backgroundColor:
-                                            project.name === currentProject.name
-                                                ? primary.palette.custom
-                                                      .lightMuted
-                                                : "inherit",
-                                        "&:hover": {
-                                            backgroundColor:
-                                                primary.palette.custom
-                                                    .lightMuted,
-                                        },
-                                        cursor: "pointer",
-                                    }}
-                                >
-                                    <Typography variant="h6">
-                                        {project.name}
-                                    </Typography>
-                                    <Typography variant="subtitle2">
-                                        {project.description}
-                                    </Typography>
-                                    {project.technologies.map((technology) => {
-                                        return (
-                                            <Chip
-                                                key={technology}
-                                                color="secondary"
-                                                label={technology}
-                                                sx={{
-                                                    margin: ".5em .5em .5em 0",
-                                                    cursor: "pointer",
-                                                }}
-                                            />
-                                        );
-                                    })}
-                                    {currentProject.name === project.name && (
-                                        <Box
+                                            primary.palette.custom.lightMuted,
+                                    },
+                                    cursor: "pointer",
+                                }}
+                            >
+                                <Typography variant="h6">
+                                    {project.name}
+                                </Typography>
+                                <Typography variant="subtitle2">
+                                    {project.description}
+                                </Typography>
+                                {project.technologies.map((technology) => {
+                                    return (
+                                        <Chip
+                                            key={technology}
+                                            color="secondary"
+                                            label={technology}
                                             sx={{
-                                                overflow: "hidden",
-                                                borderRadius:
-                                                    primary.borderRadius,
-                                                display: {
-                                                    xs: "flex",
-                                                    md: "none",
-                                                },
-                                            }}
-                                        >
-                                            <Slide
-                                                direction="down"
-                                                timeout={{ enter: 750 }}
-                                                in={
-                                                    project.name ===
-                                                    currentProject.name
-                                                }
-                                            >
-                                                <img
-                                                    src={project.image}
-                                                    alt="project screenshot"
-                                                />
-                                            </Slide>
-                                        </Box>
-                                    )}
-                                </Box>
-                            );
-                        })}
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        md={8}
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                            overflow: "hidden",
-                        }}
-                    >
-                        <Box className="flex-center">
-                            {currentProject.image && (
-                                <Slide direction="left" in={photoActive}>
-                                    <a
-                                        href={currentProject.url}
-                                        target="_BLANK"
-                                        rel="noreferrer"
-                                    >
-                                        <img
-                                            src={currentProject.image}
-                                            alt={`Screenshot of ${currentProject.name} website`}
-                                            style={{
-                                                borderRadius:
-                                                    primary.borderRadius,
+                                                margin: ".5em .5em .5em 0",
+                                                cursor: "pointer",
                                             }}
                                         />
-                                    </a>
-                                </Slide>
-                            )}
-                        </Box>
-                    </Grid>
+                                    );
+                                })}
+                                {currentProject.name === project.name && (
+                                    <Box
+                                        sx={{
+                                            overflow: "hidden",
+                                            borderRadius: primary.borderRadius,
+                                            display: {
+                                                xs: "flex",
+                                                md: "none",
+                                            },
+                                        }}
+                                    >
+                                        <Slide
+                                            direction="down"
+                                            timeout={{ enter: 550 }}
+                                            in={
+                                                photoActive &&
+                                                project.name ===
+                                                    currentProject.name
+                                            }
+                                        >
+                                            <img
+                                                className="screencap"
+                                                src={project.image}
+                                                alt="project screenshot"
+                                            />
+                                        </Slide>
+                                    </Box>
+                                )}
+                            </Box>
+                        );
+                    })}
                 </Grid>
-            </Container>
+                <Grid
+                    item
+                    xs={12}
+                    md={8}
+                    sx={{
+                        display: { xs: "none", md: "flex" },
+                        overflow: "hidden",
+                    }}
+                >
+                    <Box className="flex-center">
+                        {currentProject && (
+                            <Slide direction="left" in={photoActive}>
+                                <a
+                                    href={currentProject.url}
+                                    target="_BLANK"
+                                    rel="noreferrer"
+                                >
+                                    <img
+                                        className="screencap"
+                                        onLoad={() => {
+                                            setPhotoActive(true);
+                                        }}
+                                        src={currentProject.image}
+                                        alt={`Screenshot of ${currentProject.name} website`}
+                                        style={{
+                                            borderRadius: primary.borderRadius,
+                                        }}
+                                    />
+                                </a>
+                            </Slide>
+                        )}
+                    </Box>
+                </Grid>
+            </Grid>
         </Box>
     );
 };

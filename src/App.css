@@ -41,3 +41,12 @@ img {
     justify-content: center;
     align-items: center;
 }
+
+.screencap {
+    transition: transform 0.2s;
+    border-radius: 10px;
+}
+
+.screencap:hover {
+    transform: scale(0.98);
+}

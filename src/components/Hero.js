@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
-import mountain2 from "../images/mountain2.jpg";
+import mountains4 from "../images/mountains4.jpg";
 import { primary } from "../themes/primary";
 
 const Hero = () => {
@@ -11,8 +11,8 @@ const Hero = () => {
             className="section"
             sx={{
                 // backgroundImage: `url(${earth})`,
-                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-  url(${mountain2})`,
+                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+  url(${mountains4})`,
                 backgroundAttachment: "fixed",
                 backgroundSize: "cover",
                 height: "100vh",

@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { primary } from "../themes/primary";
 import { navigateToTop } from "../utils/utils";
@@ -22,6 +22,14 @@ const links = [
     },
 ];
 
+const credits = [
+    {
+        photo: "hero",
+        photographer: "Mitchell Kmetz",
+        service: "unsplash",
+    },
+];
+
 const Footer = () => {
     return (
         <Box
@@ -29,14 +37,8 @@ const Footer = () => {
             sx={{ backgroundColor: primary.palette.custom.dark }}
         >
             <Container>
-                <Box
-                    sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "start",
-                    }}
-                >
-                    <Box>
+                <Grid container spacing={1}>
+                    <Grid item xs={12} sm={4}>
                         <Typography
                             variant="h6"
                             sx={{
@@ -71,39 +73,73 @@ const Footer = () => {
                                 </a>
                             );
                         })}
-                    </Box>
-                    <Button onClick={navigateToTop} color="primary">
-                        Back to Top
-                    </Button>
-                </Box>
-                <Box className="flex-center" sx={{ gap: ".25em" }}>
-                    <Typography
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={4}
                         sx={{
-                            fontSize: ".8rem",
-                            color: primary.palette.custom.light,
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "end",
                         }}
-                    >
-                        Website created by{" "}
-                    </Typography>
-                    <a
-                        href="https://davidjsorensen.com"
-                        target="_BLANK"
-                        rel="noreferrer"
                     >
                         <Typography
                             sx={{
                                 fontSize: ".8rem",
                                 color: primary.palette.custom.light,
-                                "&:hover": {
-                                    color: primary.palette.custom.lightMuted,
-                                },
-                                textDecoration: "underline",
                             }}
                         >
-                            David J. Sorensen
+                            Website created by{" "}
                         </Typography>
-                    </a>
-                </Box>
+                        <a
+                            href="https://davidjsorensen.com"
+                            target="_BLANK"
+                            rel="noreferrer"
+                        >
+                            <Typography
+                                sx={{
+                                    fontSize: ".8rem",
+                                    color: primary.palette.custom.light,
+                                    "&:hover": {
+                                        color: primary.palette.custom
+                                            .lightMuted,
+                                    },
+                                    textDecoration: "underline",
+                                }}
+                            >
+                                David J. Sorensen
+                            </Typography>
+                        </a>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={4}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                            alignItems: "end",
+                        }}
+                    >
+                        <Button onClick={navigateToTop} color="primary">
+                            Back to Top
+                        </Button>
+                        {credits.map((credit) => (
+                            <Typography
+                                sx={{
+                                    fontSize: ".8rem",
+                                    color: primary.palette.custom.light,
+                                    textTransform: "capitalize",
+                                }}
+                            >
+                                {credit.photo} photo by {credit.photographer} on{" "}
+                                {credit.service}
+                            </Typography>
+                        ))}
+                    </Grid>
+                </Grid>
             </Container>
         </Box>
     );
