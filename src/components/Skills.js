@@ -69,14 +69,17 @@ const Skills = () => {
                                     variant="h5"
                                     className="text-center"
                                     sx={{
-                                        fontWeight: "bold",
-                                        marginTop: "1em",
+                                        marginTop: ".5em",
                                         marginBottom: ".5em",
                                     }}
                                 >
                                     {skill.skill}
                                 </Typography>
 
+                                <Divider
+                                    variant="middle"
+                                    sx={{ marginBottom: ".5em" }}
+                                />
                                 <Typography
                                     variant="subtitle1"
                                     className="text-center"

@@ -4,12 +4,11 @@
 }
 
 :root {
-    --color: #f2f2f2;
+    --color: #4f4f4f;
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
 
 p {

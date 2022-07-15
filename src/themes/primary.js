@@ -25,6 +25,7 @@ let primary = createTheme({
             // lightMuted: "#e2e2e2",
             lightMuted: "#f2f2f2",
             dark: "#2d2d2d",
+            darkMuted: "#4f4f4f",
         },
     },
     typography: {
@@ -61,19 +62,17 @@ primary = createTheme(primary, {
         },
         h5: {
             color: primary.palette.text.secondary,
+            fontWeight: "bold",
             // fontSize: "clamp(1rem, 2vw, 5rem)",
         },
-    },
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {},
-            },
+        h6: {
+            fontWeight: "bold",
         },
-        MuiCard: {
-            styleOverrides: {
-                root: {},
-            },
+        subtitle1: {
+            color: primary.palette.custom.darkMuted,
+        },
+        subtitle2: {
+            color: primary.palette.custom.darkMuted,
         },
     },
 });

@@ -12,6 +12,7 @@ import { Slide, useScrollTrigger } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 import { primary } from "../themes/primary";
 import { useState } from "react";
+import { navigateToTop } from "../utils/utils";
 
 const pages = ["projects", "contact"];
 const activeStyle = {
@@ -30,8 +31,6 @@ const Header = () => {
     };
 
     const handleCloseNavMenu = (e) => {
-        console.log(e.target.innerHTML);
-
         setAnchorElNav(null);
     };
 
@@ -44,7 +43,12 @@ const Header = () => {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Link to="/">
+                        <Link
+                            to="/"
+                            onClick={() => {
+                                navigateToTop();
+                            }}
+                        >
                             <Box
                                 sx={{
                                     display: { xs: "none", md: "flex" },
@@ -93,7 +97,13 @@ const Header = () => {
                                 }}
                             >
                                 {pages.map((page, index) => (
-                                    <Link key={index} to={`/${page}`}>
+                                    <Link
+                                        key={index}
+                                        to={`/${page}`}
+                                        onClick={() => {
+                                            navigateToTop();
+                                        }}
+                                    >
                                         <MenuItem
                                             key={page}
                                             onClick={handleCloseNavMenu}
@@ -106,7 +116,13 @@ const Header = () => {
                                 ))}
                             </Menu>
                         </Box>
-                        <Link to="/" style={{ color: "inherit" }}>
+                        <Link
+                            to="/"
+                            style={{ color: "inherit" }}
+                            onClick={() => {
+                                navigateToTop();
+                            }}
+                        >
                             <Typography
                                 variant="h3"
                                 noWrap
@@ -135,6 +151,9 @@ const Header = () => {
                                     style={({ isActive }) =>
                                         isActive ? activeStyle : inactiveStyle
                                     }
+                                    onClick={() => {
+                                        navigateToTop();
+                                    }}
                                 >
                                     <Typography
                                         //separate styling because can't get NavLink working with hover
