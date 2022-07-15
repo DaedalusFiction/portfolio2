@@ -106,23 +106,22 @@ const Header = () => {
                                 ))}
                             </Menu>
                         </Box>
-                        <Typography
-                            variant="h5"
-                            noWrap
-                            component="a"
-                            href=""
-                            sx={{
-                                mr: 2,
-                                display: { xs: "flex", md: "none" },
-                                flexGrow: 1,
-                                fontFamily: "monospace",
-                                fontWeight: 700,
-                                color: "inherit",
-                                textDecoration: "none",
-                            }}
-                        >
-                            David J. Sorensen
-                        </Typography>
+                        <Link to="/" style={{ color: "inherit" }}>
+                            <Typography
+                                variant="h3"
+                                noWrap
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: "flex", md: "none" },
+                                    fontSize: "1.75rem",
+                                    flexGrow: 1,
+                                    fontWeight: 700,
+                                    color: primary.palette.custom.light,
+                                }}
+                            >
+                                David J. Sorensen
+                            </Typography>
+                        </Link>
                         <Box
                             sx={{
                                 flexGrow: 1,

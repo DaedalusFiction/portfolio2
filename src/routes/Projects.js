@@ -1,5 +1,5 @@
 import { CleaningServices } from "@mui/icons-material";
-import { Chip, Fade, Grid, Typography } from "@mui/material";
+import { Chip, Fade, Grid, Slide, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React, { useState } from "react";
 import Project from "../components/Project";
@@ -52,7 +52,7 @@ const Projects = () => {
                     My Projects
                 </Typography>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} md={4}>
                         {projects.map((project, index) => {
                             return (
                                 <Box
@@ -95,11 +95,43 @@ const Projects = () => {
                                             />
                                         );
                                     })}
+                                    {currentProject.name === project.name && (
+                                        <Box
+                                            sx={{
+                                                overflow: "hidden",
+                                                borderRadius:
+                                                    primary.borderRadius,
+                                                display: {
+                                                    xs: "flex",
+                                                    md: "none",
+                                                },
+                                            }}
+                                        >
+                                            <Slide
+                                                direction="down"
+                                                timeout={{ enter: 750 }}
+                                                in={
+                                                    project.name ===
+                                                    currentProject.name
+                                                }
+                                            >
+                                                <img
+                                                    src={project.image}
+                                                    alt="project screenshot"
+                                                />
+                                            </Slide>
+                                        </Box>
+                                    )}
                                 </Box>
                             );
                         })}
                     </Grid>
-                    <Grid item xs={12} sm={8}>
+                    <Grid
+                        item
+                        xs={12}
+                        md={8}
+                        sx={{ display: { xs: "none", md: "flex" } }}
+                    >
                         {currentProject.image && (
                             <Fade in={photoActive}>
                                 <img

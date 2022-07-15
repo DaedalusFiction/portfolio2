@@ -4,7 +4,7 @@
 }
 
 :root {
-    --color: #ececec;
+    --color: #f2f2f2;
 }
 
 a {
@@ -18,7 +18,7 @@ p {
 
 img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .section {

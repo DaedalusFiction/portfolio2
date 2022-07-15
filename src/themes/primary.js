@@ -23,7 +23,7 @@ let primary = createTheme({
         custom: {
             light: "white",
             // lightMuted: "#e2e2e2",
-            lightMuted: "#eeeeee",
+            lightMuted: "#f2f2f2",
             dark: "#2d2d2d",
         },
     },
