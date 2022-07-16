@@ -12,6 +12,7 @@
     font-style: normal;
     font-weight: 600;
     src: url("./fonts/oxanium.ttf") format("truetype");
+    font-display: swap;
 }
 
 a {
