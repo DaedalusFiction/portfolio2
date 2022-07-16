@@ -2,7 +2,7 @@ import { Button, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
-import mountains4 from "../images/mountains4.jpg";
+import mountains4 from "../images/mountains4.avif";
 import { primary } from "../themes/primary";
 
 const Hero = () => {
