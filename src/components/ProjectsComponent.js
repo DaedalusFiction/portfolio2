@@ -1,11 +1,10 @@
-import { Chip, Fade, Grid, Slide, Typography } from "@mui/material";
-import { convertLength } from "@mui/material/styles/cssUtils";
-import { Box, Container } from "@mui/system";
+import { Chip, Grid, Slide, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import React, { useState } from "react";
-import forumScreencap from "../images/forumScreencap.jpg";
-import pfddScreencap from "../images/pfddScreencap.jpg";
-import sicktoothScreencap from "../images/sicktoothScreencap.jpg";
-import streamerizeScreencap from "../images/streamerizeScreencap.jpg";
+import forumScreencap from "../images/forumScreencap.avif";
+import pfddScreencap from "../images/pfddScreencap.avif";
+import sicktoothScreencap from "../images/sicktoothScreencap.avif";
+import streamerizeScreencap from "../images/streamerizeScreencap.avif";
 import { primary } from "../themes/primary";
 
 const projects = [

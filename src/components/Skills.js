@@ -2,10 +2,10 @@ import { Divider, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React from "react";
 import { primary } from "../themes/primary";
-import typewriter from "../images/typewriter.jpg";
-import coffee from "../images/coffee.jpg";
-import climbing from "../images/climbing.jpg";
-import plant from "../images/plant.jpg";
+import typewriter from "../images/typewriter.avif";
+import coffee from "../images/coffee.avif";
+import climbing from "../images/climbing.avif";
+import plant from "../images/plant.avif";
 
 const skills = [
     {

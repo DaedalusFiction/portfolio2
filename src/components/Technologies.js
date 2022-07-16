@@ -1,10 +1,7 @@
-import { Button, Chip, Grid, Typography } from "@mui/material";
+import { Chip, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { primary } from "../themes/primary";
-import building1 from "../images/building1.jpg";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import { Link } from "react-router-dom";
+import building1 from "../images/building1.avif";
 
 const technologies = [
     "React",

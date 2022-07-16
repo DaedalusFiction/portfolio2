@@ -25,9 +25,9 @@ const About = () => {
                     <Box sx={{ padding: "0 5vw" }}>
                         <Typography variant="h3">My Journey</Typography>
                         <Typography component="p" sx={{ marginBottom: "1em" }}>
-                            I've spent the past few years teaching myself the
-                            principles of modern programming. By learning on my
-                            own I've developed an eye for quality sources of
+                            I've spent the past few years teaching myself how to
+                            build fast, sharp websites. By learning on my own
+                            I've developed an eye for quality sources of
                             information as well as the confidence to engage new
                             projects and ideas.
                         </Typography>
