@@ -2,7 +2,7 @@ import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { primary } from "../themes/primary";
-import about2 from "../images/about2.jpg";
+import about2 from "../images/about2.avif";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
 
