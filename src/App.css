@@ -7,6 +7,13 @@
     --color: #4f4f4f;
 }
 
+@font-face {
+    font-family: "Oxanium";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./fonts/oxanium.ttf") format("truetype");
+}
+
 a {
     text-decoration: none;
 }
