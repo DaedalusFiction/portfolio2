@@ -2,7 +2,7 @@ import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { primary } from "../themes/primary";
-import mountain1 from "../images/mountain1.jpg";
+import about2 from "../images/about2.jpg";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
 
@@ -51,7 +51,7 @@ const About = () => {
                         style={{
                             borderRadius: `${primary.borderRadius} 0 0 ${primary.borderRadius}`,
                         }}
-                        src={mountain1}
+                        src={about2}
                         alt="snowy mountains"
                     />
                 </Grid>

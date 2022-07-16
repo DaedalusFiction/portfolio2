@@ -28,6 +28,31 @@ const credits = [
         photographer: "Mitchell Kmetz",
         service: "unsplash",
     },
+    {
+        photo: "technologies",
+        photographer: "Flipboard",
+        service: "unsplash",
+    },
+    {
+        photo: "language",
+        photographer: "Laura Rivera",
+        service: "unsplash",
+    },
+    {
+        photo: "interpersonal",
+        photographer: "Nathan Dumlao",
+        service: "unsplash",
+    },
+    {
+        photo: "leadership",
+        photographer: "Ahmad",
+        service: "unsplash",
+    },
+    {
+        photo: "Adaptability",
+        photographer: "Erika Fletcher",
+        service: "unsplash",
+    },
 ];
 
 const Footer = () => {
@@ -90,7 +115,7 @@ const Footer = () => {
                                 color: primary.palette.custom.light,
                             }}
                         >
-                            Website created by{" "}
+                            Website created by
                         </Typography>
                         <a
                             href="https://davidjsorensen.com"
@@ -106,6 +131,7 @@ const Footer = () => {
                                             .lightMuted,
                                     },
                                     textDecoration: "underline",
+                                    marginLeft: ".25em",
                                 }}
                             >
                                 David J. Sorensen
@@ -130,7 +156,7 @@ const Footer = () => {
                             <Typography
                                 sx={{
                                     fontSize: ".8rem",
-                                    color: primary.palette.custom.light,
+                                    color: primary.palette.custom.lightMuted,
                                     textTransform: "capitalize",
                                 }}
                             >

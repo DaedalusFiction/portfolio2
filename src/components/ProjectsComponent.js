@@ -56,7 +56,10 @@ const Projects = () => {
 
     return (
         <Box className="section">
-            <Typography variant="h1" sx={{ marginBottom: ".5em" }}>
+            <Typography
+                variant="h1"
+                sx={{ marginBottom: ".5em", textAlign: "center" }}
+            >
                 My Projects
             </Typography>
             <Grid container spacing={2}>
