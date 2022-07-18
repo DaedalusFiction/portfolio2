@@ -63,46 +63,54 @@ const Footer = () => {
         >
             <Container>
                 <Grid container spacing={1}>
-                    <Grid item xs={12} sm={4}>
-                        <Typography
-                            variant="h6"
+                    <Grid item xs={12} md={4}>
+                        <Box
                             sx={{
-                                color: primary.palette.custom.light,
-                                marginBottom: "1em",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: { xs: "center", md: "start" },
                             }}
                         >
-                            My Websites
-                        </Typography>
-                        {links.map((item, index) => {
-                            return (
-                                <a
-                                    key={index}
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <Typography
-                                        sx={{
-                                            color: primary.palette.custom
-                                                .lightMuted,
-                                            fontSize: "1rem",
-                                            "&:hover": {
-                                                color: primary.palette.custom
-                                                    .light,
-                                            },
-                                        }}
-                                        gutterBottom
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: primary.palette.custom.light,
+                                    marginBottom: "1em",
+                                }}
+                            >
+                                My Websites
+                            </Typography>
+                            {links.map((item, index) => {
+                                return (
+                                    <a
+                                        key={index}
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noreferrer"
                                     >
-                                        {item.text}
-                                    </Typography>
-                                </a>
-                            );
-                        })}
+                                        <Typography
+                                            sx={{
+                                                color: primary.palette.custom
+                                                    .lightMuted,
+                                                fontSize: "1rem",
+                                                "&:hover": {
+                                                    color: primary.palette
+                                                        .custom.light,
+                                                },
+                                            }}
+                                            gutterBottom
+                                        >
+                                            {item.text}
+                                        </Typography>
+                                    </a>
+                                );
+                            })}
+                        </Box>
                     </Grid>
                     <Grid
                         item
                         xs={12}
-                        sm={4}
+                        md={4}
                         sx={{
                             display: "flex",
                             justifyContent: "center",
@@ -141,17 +149,14 @@ const Footer = () => {
                     <Grid
                         item
                         xs={12}
-                        sm={4}
+                        md={4}
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            justifyContent: "space-between",
-                            alignItems: "end",
+                            justifyContent: "end",
+                            alignItems: { xs: "center", md: "end" },
                         }}
                     >
-                        <Button onClick={navigateToTop} color="primary">
-                            Back to Top
-                        </Button>
                         {credits.map((credit) => (
                             <Typography
                                 sx={{
