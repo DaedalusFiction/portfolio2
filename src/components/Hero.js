@@ -49,16 +49,15 @@ const Hero = () => {
                                 Projects
                             </Button>
                         </Link>
-                        <Link to="/contact">
-                            <Button
-                                variant="contained"
-                                color="secondary"
-                                size="large"
-                                tabIndex={-1}
-                            >
-                                Contact
-                            </Button>
-                        </Link>
+
+                        <Button
+                            href="https://www.github.com/DaedalusFiction"
+                            variant="contained"
+                            color="secondary"
+                            size="large"
+                        >
+                            Github
+                        </Button>
                     </Box>
                 </Box>
             </Container>
